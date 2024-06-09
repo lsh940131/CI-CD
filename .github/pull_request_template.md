@@ -1,13 +1,14 @@
 ## PR Checklist
-확인사항:
+확인사항
+O : 했음
+- : 해당 없음
 
-- [  ] 작업 전 브랜치 최신화 했나요?
-- [  ] 테스트 및 테스트 코드 작성은 했나요?
+- [  ] 작업 전 브랜치 최신화
+- [  ] 테스트
+- [  ] 테스트 코드 작성
 
 ## PR Type
 어떤 종류의 PR 인가요?
-
-<!-- Please check the one that applies to this PR using "x". -->
 
 - [  ] 버그픽스
 - [  ] 피처작업
@@ -18,4 +19,3 @@
 
 
 ## 작업내역
-<!-- Please describe the current behavior that you are modifying, or link to a relevant issue. -->
