@@ -1,0 +1,29 @@
+name: cicd
+
+# Push와 Pull Request 이벤트를 트리거로 설정
+on:
+  push:
+    branches:
+      - '**'  # 모든 브랜치에서 실행
+  pull_request:
+    branches:
+      - '**'  # 모든 브랜치에서 실행
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run test
