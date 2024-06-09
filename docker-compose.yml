@@ -1,0 +1,15 @@
+services:
+    app:
+        container_name: cicd
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - 3000:3000
+        volumes:
+            - ./src:/usr/server/volumes
+        command:
+            - bash
+            - -c
+            - |
+                npm run start
