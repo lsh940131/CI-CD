@@ -1,8 +1,8 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/sample-task-definition:2",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/sample-task-definition:3",
   "containerDefinitions": [
     {
-      "name": "sample-contain",
+      "name": "cicd-container",
       "image": "058264448767.dkr.ecr.ap-northeast-2.amazonaws.com/cicd",
       "cpu": 0,
       "portMappings": [
@@ -37,7 +37,7 @@
   "taskRoleArn": "arn:aws:iam::058264448767:role/ecsFullAccessRole",
   "executionRoleArn": "arn:aws:iam::058264448767:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 2,
+  "revision": 3,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -78,7 +78,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-06-15T14:56:25.440Z",
+  "registeredAt": "2024-06-15T15:41:40.470Z",
   "registeredBy": "arn:aws:iam::058264448767:root",
   "tags": []
 }
