@@ -1,9 +1,9 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/sample-task-definition:3",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/sample-task-definition:4",
   "containerDefinitions": [
     {
       "name": "cicd-container",
-      "image": "058264448767.dkr.ecr.ap-northeast-2.amazonaws.com/cicd",
+      "image": "058264448767.dkr.ecr.ap-northeast-2.amazonaws.com/cicd:173aef12ac4a1ec922abaeb98d4e3666d1fa06a8",
       "cpu": 0,
       "portMappings": [
         {
@@ -16,10 +16,8 @@
       ],
       "essential": true,
       "environment": [],
-      "environmentFiles": [],
       "mountPoints": [],
       "volumesFrom": [],
-      "ulimits": [],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -27,8 +25,7 @@
           "awslogs-create-group": "true",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
-        },
-        "secretOptions": []
+        }
       },
       "systemControls": []
     }
@@ -37,7 +34,7 @@
   "taskRoleArn": "arn:aws:iam::058264448767:role/ecsFullAccessRole",
   "executionRoleArn": "arn:aws:iam::058264448767:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 3,
+  "revision": 4,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -78,7 +75,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-06-15T15:41:40.470Z",
-  "registeredBy": "arn:aws:iam::058264448767:root",
+  "registeredAt": "2024-06-15T15:43:21.979Z",
+  "registeredBy": "arn:aws:iam::058264448767:user/deployerA",
   "tags": []
 }
