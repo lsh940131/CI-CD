@@ -1,11 +1,18 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/cicd-family:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/cicd-task-definition:4",
   "containerDefinitions": [
     {
       "name": "cicd-container",
       "image": "058264448767.dkr.ecr.ap-northeast-2.amazonaws.com/cicd",
       "cpu": 0,
       "portMappings": [
+        {
+          "name": "cicd-container-80-tcp",
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        },
         {
           "name": "cicd-container-3000-tcp",
           "containerPort": 3000,
@@ -23,7 +30,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/cicd-family",
+          "awslogs-group": "/ecs/cicd-task-definition",
           "awslogs-create-group": "true",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
@@ -33,10 +40,10 @@
       "systemControls": []
     }
   ],
-  "family": "cicd-family",
+  "family": "cicd-task-definition",
   "executionRoleArn": "arn:aws:iam::058264448767:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 1,
+  "revision": 4,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -74,7 +81,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-06-16T06:06:15.744Z",
+  "registeredAt": "2024-06-16T08:16:02.844Z",
   "registeredBy": "arn:aws:iam::058264448767:root",
   "tags": []
 }
