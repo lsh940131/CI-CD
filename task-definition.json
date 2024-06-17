@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/cicd-family:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:058264448767:task-definition/cicd-task:3",
   "containerDefinitions": [
     {
       "name": "cicd-container",
@@ -23,7 +23,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/cicd-family",
+          "awslogs-group": "/ecs/cicd-task",
           "awslogs-create-group": "true",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
@@ -33,10 +33,11 @@
       "systemControls": []
     }
   ],
-  "family": "cicd-family",
-  "executionRoleArn": "arn:aws:iam::058264448767:role/ecsTaskExecutionRole",
+  "family": "cicd-task",
+  "taskRoleArn": "arn:aws:iam::058264448767:role/ecsFullAccessRole",
+  "executionRoleArn": "arn:aws:iam::058264448767:role/ecsFullAccessRole",
   "networkMode": "awsvpc",
-  "revision": 1,
+  "revision": 3,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -51,6 +52,9 @@
     },
     {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
     },
     {
       "name": "ecs.capability.execution-role-ecr-pull"
@@ -68,13 +72,13 @@
   "placementConstraints": [],
   "compatibilities": ["EC2", "FARGATE"],
   "requiresCompatibilities": ["FARGATE"],
-  "cpu": "1024",
-  "memory": "3072",
+  "cpu": "512",
+  "memory": "1024",
   "runtimePlatform": {
-    "cpuArchitecture": "X86_64",
+    "cpuArchitecture": "ARM64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-06-16T06:06:15.744Z",
+  "registeredAt": "2024-06-17T07:47:50.314Z",
   "registeredBy": "arn:aws:iam::058264448767:root",
   "tags": []
 }
